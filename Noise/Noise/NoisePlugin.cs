@@ -41,8 +41,8 @@ public class NoisePlugin : BaseUnityPlugin
     private void Awake()
     {
         noiseSpeedConfig = Config.Bind("General", "Noise Speed", 10f, "The normal follow speed of Noise.");
-                noiseFastForwardSpeedConfig = Config.Bind("General", "Noise Fast Forward Speed", 28f, "The speed of Noise when fast forwarding.");
-                noiseFastForwardDistanceConfig = Config.Bind("General", "Noise Fast Forward Distance", 5f, "The distance (in tiles) required between the player and Noise to trigger fast forward.");
+        noiseFastForwardSpeedConfig = Config.Bind("General", "Noise Fast Forward Speed", 28f, "The speed of Noise when fast forwarding.");
+        noiseFastForwardDistanceConfig = Config.Bind("General", "Noise Fast Forward Distance", 5f, "The distance (in tiles) required between the player and Noise to trigger fast forward.");
 
         LoadAssets();
         GenerateStaticFrames();
