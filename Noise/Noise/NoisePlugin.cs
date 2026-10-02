@@ -231,7 +231,6 @@ public class NoiseBehavior : MonoBehaviour
                 {
                     if (sr != null)
                     {
-                        sr.enabled = false;
                         sr.material = new Material(NoisePlugin.noiseShader);
 
                         if (sr.gameObject.GetComponent<BillboardUpdater>() == null)
@@ -294,14 +293,6 @@ public class NoiseBehavior : MonoBehaviour
         if (!noiseBody.activeSelf)
         {
             noiseBody.SetActive(true);
-
-            if (renderers != null)
-            {
-                foreach (SpriteRenderer sr in renderers)
-                {
-                    if (sr != null) sr.enabled = true;
-                }
-            }
 
             int spawnIndex = 0;
             for (int i = positionHistory.Count - 1; i >= 0; i--)
