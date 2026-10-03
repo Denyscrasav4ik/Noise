@@ -13,7 +13,7 @@ using TMPro;
 
 namespace Noise;
 
-[BepInPlugin("denyscrasav4ik.thedumbfactory.noise", "Noise", "1.0.0")]
+[BepInPlugin("denyscrasav4ik.thedumbfactory.noise", "Noise", "1.0.1")]
 public class NoisePlugin : BaseUnityPlugin
 {
     public static Shader noiseShader;
@@ -193,10 +193,10 @@ public class NoiseBehavior : MonoBehaviour
         pm = GetComponent<PlayerManager>();
         if (pm != null)
             lastPlayerPosition = pm.transform.position;
-        CreatenoiseBody();
+        CreateNoiseBody();
     }
 
-    private void CreatenoiseBody()
+    private void CreateNoiseBody()
     {
         Student[] studentPrefabs = Resources.FindObjectsOfTypeAll<Student>();
         if (studentPrefabs != null && studentPrefabs.Length != 0)
@@ -219,6 +219,7 @@ public class NoiseBehavior : MonoBehaviour
             if (noiseBody.GetComponent<Entity>() != null) noiseBody.GetComponent<Entity>().enabled = false;
             if (noiseBody.GetComponent<Navigator>() != null) noiseBody.GetComponent<Navigator>().enabled = false;
             if (noiseBody.GetComponent<ActivityModifier>() != null) noiseBody.GetComponent<ActivityModifier>().enabled = false;
+            if (noiseBody.GetComponent<Looker>() != null) noiseBody.GetComponent<Looker>().enabled = false;
 
             noiseAnimator = noiseBody.GetComponentInChildren<Animator>(true);
             if (noiseAnimator != null)
